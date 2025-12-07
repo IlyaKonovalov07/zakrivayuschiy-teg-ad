@@ -8,8 +8,8 @@
 
   color: var(--color-accent);
   font: var(--font-weight) 16px var(--main-font), sans-serif;
-  /* font-variation-settings: 'wght' var(--font-weight);
-  font-family: var(--main-font), sans-serif; */
+  font-variation-settings: 'wght' var(--font-weight);
+  font-family: var(--main-font), sans-serif;
   min-height: 100vh;
   min-width: 320px;
 
@@ -57,7 +57,7 @@
 /* названия над карточками */
 .title-card {
   font-size: 18px;
-  /* font-variation-settings: 'wght' 700; */
+  font-variation-settings: 'wght' 700;
   font-weight: 700;
   border: 1px solid var(--border-color);
   padding: 5px 10px;
@@ -92,14 +92,14 @@
 }
 
 /* Поддержка text-stroke */
-/* @supports (text-stroke: 1px var(--border-color-text)) or
+@supports (text-stroke: 1px var(--border-color-text)) or
   (-webkit-text-stroke: 1px var(--border-color-text)) {
   .card_image-text {
     text-stroke: 1px var(--border-color-text);
     -webkit-text-stroke: 1px var(--border-color-text);
     text-shadow: none;
   }
-} */
+}
 
 /* разные цвета изображений */
 /* .card_image-item-1 {
@@ -207,7 +207,7 @@
 }
 
 .card_icon-button {
-  transition: all 0.3s ease;
+  transition: 0.3s;
   background: transparent;
   border: none;
   cursor: pointer;
