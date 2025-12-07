@@ -1,1 +1,34 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+	--main-font: 'Inter';
+	--accent-font: 'PressStart2P';
+    --font-weight: 400;
+    --title-font-weight: 700;
+	--font-size: 18px;
+	--font-size-button: 14px;
+	--primary-color: #fff;
+	--color-accent: #000;
+	--border-color: #000;
+	--logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+	--card-width: clamp(23.4375rem, 16.2852rem + 30.5164svi, 43.75rem);
+	--background-image: 
+        repeating-linear-gradient(90deg,#d3d3d3 0 2px,rgba(0, 0, 0, 0) 2px 4px),
+		repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+		linear-gradient(#e7e7e7, #1a1a1a);
+	--backdrop-color: rgb(0 0 0 / 0.75);
+	--border-color-button: #000;
+	--border-color-text: #fff;
+	--background-color: #fff;
+	--heart-color-contour: #000;
+	--heart-color-core: #fff;
+	--heart-color-main-body: #ff0000;
+	--heart-color-sparks: #ff0000;
+	--heart-color-fill: #ff0000;
+}
+
+@media (width <= 375px) {
+	:root {
+		--title-font-size: clamp(2.625rem, 0.0795rem + 12.7273vw, 3.0625rem);
+		--card-width: 100%;
+	}
+}
+
