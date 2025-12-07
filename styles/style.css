@@ -64,14 +64,14 @@
 }
 
 /* каритнки */
-.card__image {
+.card_image {
   border: 1px solid var(--border-color);
   position: relative;
   display: flex;
 }
 
 /* текст справа сверху у изображения */
-.card__image-text {
+.card_image-text {
   text-shadow: 
     -1px 0 1px var(--border-color-text),
     0 1px 1px var(--border-color-text),
@@ -94,7 +94,7 @@
 /* Поддержка text-stroke */
 /* @supports (text-stroke: 1px var(--border-color-text)) or
   (-webkit-text-stroke: 1px var(--border-color-text)) {
-  .card__image-text {
+  .card_image-text {
     text-stroke: 1px var(--border-color-text);
     -webkit-text-stroke: 1px var(--border-color-text);
     text-shadow: none;
@@ -102,137 +102,141 @@
 } */
 
 /* разные цвета изображений */
-.card__image-item-1 {
+/* .card_image-item-1 {
   filter: none;
   width: 100%;
 }
 
-.card__image-item-2 {
+.card_image-item-2 {
   filter: saturate(30%);
   width: 100%;
 }
 
-.card__image-item-3 {
-  filter: brightness(200%);
+.card_image-item-3 {
+  filter: saturate(4);
   width: 100%;
 }
 
-.card__image-item-4 {
-  filter: sepia(30%) contrast(150%);
+.card_image-item-4 {
+  filter: hue-rotate(30deg);
   width: 100%;
 }
 
-.card__image-item-5 {
-  filter: contrast(20%) saturate(1000%);
+.card_image-item-5 {
+  filter: invert(1) contrast(0.6);
   width: 100%;
 }
 
-.card__image-item-6 {
-  filter: grayscale(100%);
+.card_image-item-6 {
+  filter: sepia(0.9);
   width: 100%;
 }
 
-.card__image-item-7 {
-  filter: hue-rotate(90deg);
+.card_image-item-7 {
+  filter: blur(18px);
   width: 100%;
 }
 
-.card__image-item-8 {
-  filter: saturate(30%) sepia(1000%);
+.card_image-item-8 {
+  filter: hue-rotate(90deg) blur(2px) contrast(0.5) saturate(1.5);
   width: 100%;
-}
-
-/* .card__image-item {
-  width: 100%;
-}
-
-.card__image-item-1 {
-  filter: none;
-}
-
-.card__image-item-2 {
-  filter: saturate(30%);
-}
-
-.card__image-item-3 {
-  filter: brightness(200%);
-}
-
-.card__image-item-4 {
-  filter: sepia(30%) contrast(150%);
-}
-
-.card__image-item-5 {
-  filter: contrast(20%) saturate(1000%);
-}
-
-.card__image-item-6 {
-  filter: grayscale(100%);
-}
-
-.card__image-item-7 {
-  filter: hue-rotate(90deg);
-}
-
-.card__image-item-8 {
-  filter: saturate(30%) sepia(1000%);
 } */
 
-/* Контент карточки */
-.card__content {
-  padding: 25px 25px 20px;
+.card_image-item {
+  width: 100%;
+}
+
+/* .card_image-item-1 {
+  filter: none;
+} */
+
+.card_image-item-2 {
+  filter: saturate(30%);
+}
+
+.card_image-item-3 {
+  filter: saturate(400%);
+}
+
+.card_image-item-4 {
+  /* сдвиг цветов */
+  filter: hue-rotate(30deg);
+}
+
+.card_image-item-5 {
+  /* инверсия */
+  filter: invert(1) contrast(60%);
+}
+
+.card_image-item-6 {
+  /* эффек стар фотк, коричн цвет */
+  filter: sepia(90%);
+}
+
+.card_image-item-7 {
+  filter: blur(18px);
+}
+
+.card_image-item-8 {
+  filter: hue-rotate(90deg) blur(2px) contrast(50%) saturate(150%);
+}
+
+.content_card {
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-left: 25px;
   border: 1px solid #000;
 }
 
-/* Текст карточки */
-.card__text {
-  font-size: var(--font-size, 18px);
+.text_card {
+  font-size: 18px;
 }
 
-/* Отступы текста */
-.card__text:not(:first-child) {
-  margin-block-start: 27px;
+/* отсутп текста от картинки */
+.text_card:not(:first-child) {
+   margin-top: 27px;
 }
 
-/* Кнопки карточки */
-.card__buttons {
-  justify-content: end;
-  margin-block-start: 22px;
-  gap: 4px;
+/* кнопки у карточек */
+.buttons_card {
   display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 22px;
 }
 
-/* Кнопка-иконка */
-.card__icon-button {
-  transition: border-color 0.3s ease;
+.card_icon-button {
+  transition: all 0.3s ease;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-/* Фокус кнопки-иконки */
-.card__icon-button:focus-visible {
-  outline: none;
+/* фокус кнопки */
+.card_icon-button:focus-visible {
+  /* outline: none; !*/
   border-color: var(--color-accent);
 }
 
-/* Кнопка лайка */
-.card__like-button {
-  line-height: 0.9;
-  font-size: var(--font-size-button);
-  font-family: var(--accent-font);
-  padding: 11px 35px;
+/* кнопка сердечка */
+.card_like-button {
+  /* line-height: 0.9; */
+  font-size: var(--font-size-button, 16px);
+  font-family: var(--accent-font, sans-serif);
+  padding-block: 11px;
+  padding-inline: 35px;
 }
 
 /* Карточка сохранения */
 .save-card {
   width: 100%;
-  max-width: var(--card-width);
-  margin-inline: auto;
+  max-width: var(--card-width, 800px);
+  margin: 0 auto;
 }
 
 /* Иконка сохранения */
-.main__save-button > svg {
+.main__save-button svg {
   height: 21px;
   width: 21px;
 }
