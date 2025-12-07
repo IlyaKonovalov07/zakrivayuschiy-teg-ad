@@ -236,25 +236,27 @@
 }
 
 /* Иконка сохранения */
-.main__save-button svg {
+.main_save-button svg {
   height: 21px;
   width: 21px;
 }
 
 /* Кнопка сохранения */
-.main__save-button {
+.main_save-button {
+  display: flex;
   line-height: 0.9;
-  font-size: var(--font-size-button);
-  font-family: var(--accent-font);
-  margin: 50px auto 100px;
-  padding: 15px 20px;
+  font-size: var(--font-size-button, 14px);
+  font-family: var(--accent-font, 'PressStart2P');
+  margin-block: 50px 100px;
+  margin-inline: auto;
+  padding-block: 15px;
+  padding-inline: 20px;
   align-items: center;
   gap: 8px;
-  display: flex;
 }
 
-/* Диалоговое окно */
-.dialog {
+/* дискета */
+.disk-window {
   width: 357px;
   padding: 30px;
   border: 2px solid var(--border-color);
@@ -262,94 +264,98 @@
   background-color: var(--background-color);
 }
 
-/* Подложка диалога */
-.dialog::backdrop {
+/* подложка дискеты */
+.disk-window::backdrop {
   background-color: var(--backdrop-color);
 }
 
-/* Контент диалога */
-.dialog__content {
+/* контент диалога */
+.disk-window__content {
   align-items: center;
   gap: 20px;
   display: flex;
 }
 
-/* Иконка диалога */
-.dialog__icon {
+/* иконка дискеты */
+.disk-window__icon {
+  /* не сжимается */
   flex-shrink: 0;
   height: 39px;
   width: 39px;
 }
 
-/* Текст диалога */
-.dialog__text {
+/* текст дискеты */
+.disk-window__text {
   line-height: 1.5;
-  font-size: var(--font-size-button);
+  font-size: var(--font-size-button, 18px);
   font-family: var(--accent-font);
 }
 
-/* Кнопка диалога */
-.dialog__button {
+/* кнопка дискеты */
+.disk-window__button {
   margin-top: 30px;
-  padding-block: 10.5px;
+  /* padding-block: 10.5px; */
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
   width: 100%;
 }
 
-/* Текст подтверждения */
-.dialog__ok {
+/* текст подтверждения */
+.disk-window__ok {
   line-height: 0.9;
   font-family: var(--accent-font);
-  font-size: var(--font-size-button);
+  font-size: var(--font-size-button, 18px);
 }
 
-/* Адаптив для мобильных */
+/*для мобил */
 @media (width <= 375px) {
-  .main__save-button {
+  .main_save-button {
     flex-direction: column;
   }
 }
 
-/* Базовые стили кнопки */
+/* кнопки */
 .button {
   overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   z-index: 2;
-  border: 2px solid var(--border-color-button);
-  background-color: var(--background-color);
+  border: 2px solid var(--border-color-button, #000);
+  background-color:  #FFF;
   position: relative;
 }
 
-/* Текст кнопки */
+/* текст кнопки */
 .button span {
   mix-blend-mode: difference;
-  color: var(--primary-color);
+  color: white;
 }
 
 /* Иконка кнопки */
-.button svg {
+/* .button svg {
   mix-blend-mode: difference;
-  color: var(--primary-color);
-}
+  color: white;
+} */
 
-/* Эффект наведения кнопки */
+/* эфф навед на кнопку */
 .button::before {
   transition: translate 0.5s ease-in-out;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent, #000);
   translate: -100%;
   position: absolute;
   z-index: -1;
-  content: '';
-  inset: 0;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-/* Фокус кнопки */
 .button:focus {
   outline: none;
-  box-shadow: 2px 2px var(--color-accent);
+  box-shadow: 2px 2px var(--color-accent, #000);
 }
 
-/* Ховер эффекта */
 .button:hover::before {
   translate: 0;
 }

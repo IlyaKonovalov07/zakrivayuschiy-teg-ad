@@ -406,8 +406,8 @@
 			<div class="save-card">
 				<button
 					type="button"
-					onclick="document.getElementById('dialog').showModal();"
-					class="button main__save-button">
+					onclick="document.getElementById('disk-window').showModal();"
+					class="button main_save-button">
 					<svg viewBox="0 0 39 39">
 						<use href="./svg/floppy.svg#floppy" />
 					</svg>
@@ -415,18 +415,18 @@
 				</button>
 			</div>
 		</main>
-		<dialog id="dialog" class="dialog">
-			<div class="dialog__content">
-				<svg viewBox="0 0 39 39" class="dialog__icon">
+		<dialog id="disk-window" class="disk-window">
+			<div class="disk-window__content">
+				<svg viewBox="0 0 39 39" class="disk-window__icon">
 					<use href="./svg/floppy.svg#floppy" />
 				</svg>
-				<p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+				<p class="disk-window__text">Вставьте дискету, чтобы продолжить</p>
 			</div>
 			<button
 				type="button"
-				onclick="document.getElementById('dialog').close();"
-				class="button dialog__button">
-				<span class="button__text dialog__ok">OK</span>
+				onclick="document.getElementById('disk-window').close();"
+				class="button disk-window__button">
+				<span class="button__text disk-window__ok">OK</span>
 			</button>
 		</dialog>
 	</body>
