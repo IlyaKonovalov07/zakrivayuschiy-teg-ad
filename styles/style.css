@@ -231,7 +231,7 @@
 /* кнопки */
 .button {
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  /* transition: box-shadow 0.3s ease; */
   z-index: 2;
   border: 2px solid var(--border-color-button, #000);
   background-color:  #FFF;
@@ -252,23 +252,22 @@
 }
 
 /* задержка нажатия у сердца */
-.like-icon  {
+.like-icon .main-body {
   transition: fill 0.3s;
 }
 
 /* наведение */
-.like-icon:hover {
+.like-icon:hover .main-body {
   fill: #000;
 }
 
 /* анимация  сердца */
-.like-icon:active  {
+.like-icon:active .main-body {
   fill: #ff0000;
 }
 
 /* искры  у сердца */
-.like-icon .sparks {
-  opacity: 0;
+/* .like-icon .sparks {
   fill: #ff0000;
-}
+} */
 
