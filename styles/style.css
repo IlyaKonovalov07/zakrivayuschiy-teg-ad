@@ -1,12 +1,9 @@
 .main_page {
-  /* background-image: var(--background-image);
-  background-attachment: fixed;
-  background-size: cover; */
   background: var(--background-image) fixed center / cover;
   color: var(--color-accent);
-  font: var(--font-weight) 16px var(--main-font), sans-serif;
+  font: var(--font-weight) 16px var(--main-font, sans-serif);
   font-variation-settings: 'wght' var(--font-weight);
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font, sans-serif);
   min-height: 100vh;
   min-width: 320px;
 }
@@ -25,7 +22,7 @@
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(1rem, 5vw, 3rem);
   text-align: center;
   background: var(--background-color);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font, sans-serif);
 }
 
 /* /HTML */
@@ -200,11 +197,11 @@
 }
 
 /* подложка дискеты */
-.disk-window::backdrop {
+/* .disk-window::backdrop {
   background-color: var(--backdrop-color);
-}
+} */
 
-/* контент диалога */
+/* меню дискеты */
 .disk-window__content {
   align-items: center;
   gap: 20px;
@@ -212,12 +209,12 @@
 }
 
 /* иконка дискеты */
-.disk-window__icon {
-  /* не сжимается */
+/* .disk-window__icon {
+  не сжимается
   flex-shrink: 0;
   height: 39px;
   width: 39px;
-}
+} */
 
 /* текст дискеты */
 .disk-window__text {
@@ -229,7 +226,6 @@
 /* кнопка дискеты */
 .disk-window__button {
   margin-top: 30px;
-  /* padding-block: 10.5px; */
   padding-top: 10.5px;
   padding-bottom: 10.5px;
   width: 100%;
@@ -248,7 +244,6 @@
     flex-direction: column;
   }
 }
-
 /* кнопки */
 .button {
   overflow: hidden;
@@ -262,6 +257,7 @@
 
 /* текст кнопки */
 .button span {
+  /* наложение */
   mix-blend-mode: difference;
   color: white;
 }
@@ -278,11 +274,6 @@
   right: 0;
   bottom: 0;
 }
-
-/* .button:focus {
-  outline: none;
-  box-shadow: 2px 2px var(--color-accent, #000);
-} */
 /* заполняется черная полоска */
 .button:hover::before {
   translate: 0;
