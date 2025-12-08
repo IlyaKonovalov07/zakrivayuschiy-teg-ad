@@ -121,10 +121,6 @@
   font-size: 18px;
 }
 
-/* отсутп текста от картинки
-.text_card:not(:first-child) {
-   margin-top: 27px;
-} */
 
 /* кнопки у карточек */
 .buttons_card {
@@ -256,17 +252,17 @@
 }
 
 /* задержка нажатия у сердца */
-.like-icon .main-body {
+.like-icon  {
   transition: fill 0.3s;
 }
 
 /* наведение */
-.like-icon:hover .main-body {
+.like-icon:hover {
   fill: #000;
 }
 
 /* анимация  сердца */
-.like-icon:active .main-body {
+.like-icon:active  {
   fill: #ff0000;
 }
 
