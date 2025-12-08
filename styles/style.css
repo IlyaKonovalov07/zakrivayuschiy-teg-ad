@@ -363,15 +363,15 @@
 /* Стили сердца */
 
 /* Контур сердца */
-.like-icon .contour {
+/* .like-icon .contour {
   transition: fill 0.3s;
   fill: var(--heart-color-contour);
-}
+} */
 
 /* Ядро сердца */
-.like-icon .core {
+/* .like-icon .core {
   transition: fill 0.3s;
-}
+} */
 
 /* Основное тело сердца */
 .like-icon .main-body {
