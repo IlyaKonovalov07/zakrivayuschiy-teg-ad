@@ -68,10 +68,12 @@
 
 /*  text-stroke */
 /* добавл обводку букв */
-@supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
+@supports (text-stroke: 1px #fff) or
+  (-webkit-text-stroke: 1px #fff) {
   .card_image-text {
-    /* белая обводка */
+    text-stroke: 1px #fff;
     -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
   }
 }
 
