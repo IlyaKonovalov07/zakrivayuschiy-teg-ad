@@ -1,11 +1,22 @@
 .main_page {
-  background: var(--background-image) fixed center / cover;
   color: var(--color-accent);
-  font: var(--font-weight) 16px var(--main-font, sans-serif);
-  font-variation-settings: 'wght' var(--font-weight);
-  font-family: var(--main-font, sans-serif);
+  background: var(--background-image) fixed center / cover;
+  font: var(--font-weight, 16px) var(--main-font, sans-serif);
   min-height: 100vh;
   min-width: 320px;
+  /* font-variation-settings: 'wght' var(--font-weight); */
+  font-weight: 400;
+  font-family: var(--main-font, sans-serif);
+  
+}
+.header {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border: 2px solid #000;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(1rem, 5vw, 3rem);
+  background: var(--background-color);
+  font-family: var(--accent-font, sans-serif);
 }
 
 .card {
@@ -13,16 +24,6 @@
     background: var(--background-color);
     border: 1px solid var(--border-color);
     max-width: var(--card-width);
-}
-
-.header {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  border: 2px solid #000;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(1rem, 5vw, 3rem);
-  text-align: center;
-  background: var(--background-color);
-  font-family: var(--accent-font, sans-serif);
 }
 
 /* /HTML */
@@ -196,26 +197,12 @@
   background-color: var(--background-color);
 }
 
-/* подложка дискеты */
-/* .disk-window::backdrop {
-  background-color: var(--backdrop-color);
-} */
-
 /* меню дискеты */
 .disk-window__content {
   align-items: center;
   gap: 20px;
   display: flex;
 }
-
-/* иконка дискеты */
-/* .disk-window__icon {
-  не сжимается
-  flex-shrink: 0;
-  height: 39px;
-  width: 39px;
-} */
-
 /* текст дискеты */
 .disk-window__text {
   line-height: 1.5;
