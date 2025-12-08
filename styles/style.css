@@ -4,21 +4,19 @@
   font: var(--font-weight, 16px) var(--main-font, sans-serif);
   min-height: 100vh;
   min-width: 320px;
+  /* font-variation-settings: 'wght' var(--font-weight); */
   font-weight: 400;
   font-family: var(--main-font, sans-serif);
-  
+
 }
 .header {
   text-align: center;
   margin-top: 100px;
   margin-bottom: 100px;
   border: 2px solid #000;
-  padding-top: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  padding-bottom: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  padding-left: clamp(1rem, 5vw, 3rem);
-  padding-right: clamp(1rem, 5vw, 3rem);
-  font-family: var(--accent-font, sans-serif);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(1rem, 5vw, 3rem);
   background: var(--background-color);
+  font-family: var(--accent-font, sans-serif);
 }
 
 .card {
@@ -30,33 +28,20 @@
 
 /* /HTML */
 .header__logo {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-size: var(--logo-font-size);
 }
 
 .header__title {
-  margin-top: 20px;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-top: 20px;
 }
-/* текст справа сверху у изображения */
-.card_image-text {
-  font-size: var(--font-size-button);
-  font-family: var(--accent-font);
-  line-height: 1.25;
-  text-align: right;
-  max-width: 320px;
-  z-index: 2;
-  opacity: 50%;
-  position: absolute;
-  /* top right... */
-  inset: 25px 25px auto auto;
-}
-
 /* названия над карточками */
 .title-card {
-  border: 1px solid var(--border-color);
   font-size: 18px;
-  padding: 5px 10px;
+  font-variation-settings: 'wght' 700;
   font-weight: 700;
+  border: 1px solid var(--border-color);
+  padding: 5px 10px;
 }
 
 /* каритнки */
@@ -66,13 +51,30 @@
   display: flex;
 }
 
+/* текст справа сверху у изображения */
+.card_image-text {
+  text-shadow: 
+    -1px 0 1px var(--border-color-text),
+    0 1px 1px var(--border-color-text),
+    1px 0 1px var(--border-color-text),
+    0 -1px 1px var(--border-color-text);
+  line-height: 1.25;
+  text-align: right;
+  max-width: 320px;
+  font-size: var(--font-size-button);
+  font-family: var(--accent-font);
+  opacity: 0.5;
+  position: absolute;
+  inset: 25px 25px auto auto;
+  z-index: 2;
+}
+
 /*  text-stroke */
-/* добавл обводку букв */
-@supports (text-stroke: 1px #fff) or
-  (-webkit-text-stroke: 1px #fff) {
+@supports (text-stroke: 1px var(--border-color-text)) or
+  (-webkit-text-stroke: 1px var(--border-color-text)) {
   .card_image-text {
-    text-stroke: 1px #fff;
-    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px var(--border-color-text);
+    -webkit-text-stroke: 1px var(--border-color-text);
     text-shadow: none;
   }
 }
