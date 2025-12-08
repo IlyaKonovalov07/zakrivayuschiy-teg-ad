@@ -52,11 +52,6 @@
 
 /* текст справа сверху у изображения */
 .card_image-text {
-  /* text-shadow: 
-    -1px 0 1px var(--border-color-text),
-    0 1px 1px var(--border-color-text),
-    1px 0 1px var(--border-color-text),
-    0 -1px 1px var(--border-color-text); */
   line-height: 1.25;
   text-align: right;
   max-width: 320px;
@@ -69,6 +64,7 @@
 }
 
 /*  text-stroke */
+/* обводка символов */
 @supports (text-stroke: 1px var(--border-color-text)) or
   (-webkit-text-stroke: 1px var(--border-color-text)) {
   .card_image-text {
@@ -125,10 +121,10 @@
   font-size: 18px;
 }
 
-/* отсутп текста от картинки */
+/* отсутп текста от картинки
 .text_card:not(:first-child) {
    margin-top: 27px;
-}
+} */
 
 /* кнопки у карточек */
 .buttons_card {
@@ -147,17 +143,21 @@
 
 /* фокус кнопки */
 .card_icon-button:focus-visible {
-  /* outline: none; !*/
   border-color: var(--color-accent);
 }
 
 /* кнопка сердечка */
 .card_like-button {
-  /* line-height: 0.9; */
   font-size: var(--font-size-button, 16px);
   font-family: var(--accent-font, sans-serif);
   padding-block: 11px;
   padding-inline: 35px;
+}
+
+/* Иконка сохранения */
+.main_save-button svg {
+  width: 21px;
+  height: 21px;
 }
 
 /* карточка сохранения */
@@ -165,12 +165,6 @@
   width: 100%;
   max-width: var(--card-width, 800px);
   margin: 0 auto;
-}
-
-/* Иконка сохранения */
-.main_save-button svg {
-  height: 21px;
-  width: 21px;
 }
 
 /* Кнопка сохранения */
@@ -198,9 +192,9 @@
 
 /* меню дискеты */
 .disk-window__content {
+  display: flex;
   align-items: center;
   gap: 20px;
-  display: flex;
 }
 /* текст дискеты */
 .disk-window__text {
@@ -230,9 +224,16 @@
     flex-direction: column;
   }
 }
+
+/* текст кнопки */
+.button span {
+  /* наложение */
+  mix-blend-mode: difference;
+  color: white;
+}
+
 /* кнопки */
 .button {
-  overflow: hidden;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   z-index: 2;
@@ -241,56 +242,37 @@
   position: relative;
 }
 
-/* текст кнопки */
-.button span {
-  /* наложение */
-  mix-blend-mode: difference;
-  color: white;
-}
 /* эфф навед на кнопку */
 .button::before {
   transition: translate 0.5s ease-in-out;
   background-color: var(--color-accent, #000);
   translate: -100%;
   position: absolute;
-  /* z-index: -1; */
   content: "";
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 }
-/* заполняется черная полоска */
-/* .button:hover::before {
-  translate: 0;
-} */
+
 /* задержка нажатия у сердца */
-.like-icon .main-body {
+.like-icon {
   transition: fill 0.3s;
+}
+
+/* наведение */
+.like-icon:hover {
+  fill: #000;
+}
+
+/* анимация  сердца */
+.like-icon:active {
+  fill: #ff0000;
 }
 
 /* искры  у сердца */
 .like-icon .sparks {
   opacity: 0;
-  fill: var(--heart-color-sparks);
-}
-
-/* Ховер ядра */
-/* .like-icon:hover .core {
-  fill: var(--heart-color-contour);
-} */
-
-/* Ховер тела */
-.like-icon:hover .main-body {
-  fill: var(--heart-color-contour);
-}
-
-/* Активное ядро */
-.like-icon:active .core {
   fill: #ff0000;
 }
 
-/* анимация  сердца */
-.like-icon:active .main-body {
-  fill: #ff0000;
-}
