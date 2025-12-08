@@ -25,7 +25,7 @@
     margin: auto auto 50px;
     background: var(--background-color);
     border: 1px solid var(--border-color);
-    max-width: clamp(23.4375rem, 16.2852rem + 30.5164svi, 43.75rem);
+    max-width: var(--card-width);
 }
 
 /* /HTML */
@@ -68,7 +68,7 @@
 
 /*  text-stroke */
 /* добавл обводку букв */
-@supports (text-stroke: 1px #fff) {
+@supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
   .card_image-text {
     /* белая обводка */
     -webkit-text-stroke: 1px #fff;
@@ -78,6 +78,7 @@
 .card_image-item {
   width: 100%;
 }
+
 .card_image-item-2 {
   filter: saturate(30%);
 }
@@ -109,28 +110,22 @@
   filter: hue-rotate(90deg) blur(2px) contrast(50%) saturate(150%);
 }
 
-.text_card {
-  font-size: 18px;
-}
-
 .content_card {
-  border: 1px solid #000;
   padding-top: 25px;
   padding-right: 25px;
   padding-bottom: 20px;
   padding-left: 25px;
+  border: 1px solid #000;
 }
 
-/* .card_icon-button {
-  transition: 0.3s;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-} */
+.text_card {
+  font-size: 18px;
+}
+
 /* отсутп текста от картинки */
-/* .text_card:not(:first-child) {
+.text_card:not(:first-child) {
    margin-top: 27px;
-} */
+}
 
 /* кнопки у карточек */
 .buttons_card {
@@ -140,27 +135,33 @@
   margin-top: 22px;
 }
 
+.card_icon-button {
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /* фокус кнопки */
 .card_icon-button:focus-visible {
+  /* outline: none; !*/
   border-color: var(--color-accent);
+}
+
+/* кнопка сердечка */
+.card_like-button {
+  /* line-height: 0.9; */
+  font-size: var(--font-size-button, 16px);
+  font-family: var(--accent-font, sans-serif);
+  padding-block: 11px;
+  padding-inline: 35px;
 }
 
 /* карточка сохранения */
 .save-card {
   width: 100%;
-  max-width: clamp(23.4375rem, 16.2852rem + 30.5164svi, 43.75rem);
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* кнопка сердечка */
-.card_like-button {
-  font-size: var(--font-size-button, 16px);
-  font-family: var(--accent-font, sans-serif);
-  padding-block: 11px;
-  padding-inline: 35px;
+  max-width: var(--card-width, 800px);
+  margin: 0 auto;
 }
 
 /* Иконка сохранения */
