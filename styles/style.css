@@ -4,7 +4,6 @@
   font: var(--font-weight, 16px) var(--main-font, sans-serif);
   min-height: 100vh;
   min-width: 320px;
-  /* font-variation-settings: 'wght' var(--font-weight); */
   font-weight: 400;
   font-family: var(--main-font, sans-serif);
   
@@ -14,34 +13,50 @@
   margin-top: 100px;
   margin-bottom: 100px;
   border: 2px solid #000;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(1rem, 5vw, 3rem);
-  background: var(--background-color);
+  padding-top: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  padding-bottom: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
   font-family: var(--accent-font, sans-serif);
+  background: var(--background-color);
 }
 
 .card {
     margin: auto auto 50px;
     background: var(--background-color);
     border: 1px solid var(--border-color);
-    max-width: var(--card-width);
+    max-width: clamp(23.4375rem, 16.2852rem + 30.5164svi, 43.75rem);
 }
 
 /* /HTML */
 .header__logo {
-  font-size: var(--logo-font-size);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header__title {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-top: 20px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
+/* текст справа сверху у изображения */
+.card_image-text {
+  font-size: var(--font-size-button);
+  font-family: var(--accent-font);
+  line-height: 1.25;
+  text-align: right;
+  max-width: 320px;
+  z-index: 2;
+  opacity: 50%;
+  position: absolute;
+  /* top right... */
+  inset: 25px 25px auto auto;
+}
+
 /* названия над карточками */
 .title-card {
-  font-size: 18px;
-  font-variation-settings: 'wght' 700;
-  font-weight: 700;
   border: 1px solid var(--border-color);
+  font-size: 18px;
   padding: 5px 10px;
+  font-weight: 700;
 }
 
 /* каритнки */
@@ -51,33 +66,18 @@
   display: flex;
 }
 
-/* текст справа сверху у изображения */
-.card_image-text {
-  line-height: 1.25;
-  text-align: right;
-  max-width: 320px;
-  font-size: var(--font-size-button);
-  font-family: var(--accent-font);
-  opacity: 0.5;
-  position: absolute;
-  inset: 25px 25px auto auto;
-  z-index: 2;
-}
-
 /*  text-stroke */
-@supports (text-stroke: 1px var(--border-color-text)) or
-  (-webkit-text-stroke: 1px var(--border-color-text)) {
+/* добавл обводку букв */
+@supports (text-stroke: 1px #fff) {
   .card_image-text {
-    text-stroke: 1px var(--border-color-text);
-    -webkit-text-stroke: 1px var(--border-color-text);
-    text-shadow: none;
+    /* белая обводка */
+    -webkit-text-stroke: 1px #fff;
   }
 }
 
 .card_image-item {
   width: 100%;
 }
-
 .card_image-item-2 {
   filter: saturate(30%);
 }
@@ -109,22 +109,28 @@
   filter: hue-rotate(90deg) blur(2px) contrast(50%) saturate(150%);
 }
 
-.content_card {
-  padding-top: 25px;
-  padding-right: 25px;
-  padding-bottom: 20px;
-  padding-left: 25px;
-  border: 1px solid #000;
-}
-
 .text_card {
   font-size: 18px;
 }
 
-/* отсутп текста от картинки */
-.text_card:not(:first-child) {
-   margin-top: 27px;
+.content_card {
+  border: 1px solid #000;
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-left: 25px;
 }
+
+/* .card_icon-button {
+  transition: 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+} */
+/* отсутп текста от картинки */
+/* .text_card:not(:first-child) {
+   margin-top: 27px;
+} */
 
 /* кнопки у карточек */
 .buttons_card {
@@ -134,33 +140,27 @@
   margin-top: 22px;
 }
 
-.card_icon-button {
-  transition: 0.3s;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
 /* фокус кнопки */
 .card_icon-button:focus-visible {
-  /* outline: none; !*/
   border-color: var(--color-accent);
-}
-
-/* кнопка сердечка */
-.card_like-button {
-  /* line-height: 0.9; */
-  font-size: var(--font-size-button, 16px);
-  font-family: var(--accent-font, sans-serif);
-  padding-block: 11px;
-  padding-inline: 35px;
 }
 
 /* карточка сохранения */
 .save-card {
   width: 100%;
-  max-width: var(--card-width, 800px);
-  margin: 0 auto;
+  max-width: clamp(23.4375rem, 16.2852rem + 30.5164svi, 43.75rem);
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* кнопка сердечка */
+.card_like-button {
+  font-size: var(--font-size-button, 16px);
+  font-family: var(--accent-font, sans-serif);
+  padding-block: 11px;
+  padding-inline: 35px;
 }
 
 /* Иконка сохранения */
