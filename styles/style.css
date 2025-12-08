@@ -2,11 +2,10 @@
   color: var(--color-accent);
   background: var(--background-image) fixed center / cover;
   font: var(--font-weight, 16px) var(--main-font, sans-serif);
-  min-height: 100vh;
   min-width: 320px;
-  /* font-variation-settings: 'wght' var(--font-weight); */
-  font-weight: 400;
+  min-height: 100vh;
   font-family: var(--main-font, sans-serif);
+  font-weight: 400;
 
 }
 .header {
@@ -53,11 +52,11 @@
 
 /* текст справа сверху у изображения */
 .card_image-text {
-  text-shadow: 
+  /* text-shadow: 
     -1px 0 1px var(--border-color-text),
     0 1px 1px var(--border-color-text),
     1px 0 1px var(--border-color-text),
-    0 -1px 1px var(--border-color-text);
+    0 -1px 1px var(--border-color-text); */
   line-height: 1.25;
   text-align: right;
   max-width: 320px;
@@ -254,7 +253,7 @@
   background-color: var(--color-accent, #000);
   translate: -100%;
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
   content: "";
   top: 0;
   left: 0;
@@ -262,9 +261,9 @@
   bottom: 0;
 }
 /* заполняется черная полоска */
-.button:hover::before {
+/* .button:hover::before {
   translate: 0;
-}
+} */
 /* задержка нажатия у сердца */
 .like-icon .main-body {
   transition: fill 0.3s;
@@ -277,9 +276,9 @@
 }
 
 /* Ховер ядра */
-.like-icon:hover .core {
+/* .like-icon:hover .core {
   fill: var(--heart-color-contour);
-}
+} */
 
 /* Ховер тела */
 .like-icon:hover .main-body {
