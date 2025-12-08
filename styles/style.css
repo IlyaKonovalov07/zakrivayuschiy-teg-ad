@@ -181,8 +181,9 @@
   width: 357px;
   padding: 30px;
   border: 2px solid var(--border-color);
-  color: var(--color-accent);
   background-color: var(--background-color);
+  color: var(--color-accent);
+  
 }
 
 /* меню дискеты */
@@ -190,12 +191,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-}
-/* текст дискеты */
-.disk-window__text {
-  line-height: 1.5;
-  font-size: var(--font-size-button, 18px);
-  font-family: var(--accent-font);
 }
 
 /* кнопка дискеты */
@@ -206,11 +201,17 @@
   width: 100%;
 }
 
-/* текст подтверждения */
-.disk-window__ok {
-  line-height: 0.9;
+/* текст дискеты */
+.disk-window__text {
   font-family: var(--accent-font);
   font-size: var(--font-size-button, 18px);
+  line-height: 1.5;
+}
+/* текст подтверждения */
+.disk-window__ok {
+  font-family: var(--accent-font);
+  font-size: var(--font-size-button, 18px);
+  line-height: 0.9;
 }
 
 /*для мобил */
@@ -227,21 +228,11 @@
   color: white;
 }
 
-/* кнопки */
-.button {
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-  z-index: 2;
-  border: 2px solid var(--border-color-button, #000);
-  background-color:  #FFF;
-  position: relative;
-}
-
 /* эфф навед на кнопку */
 .button::before {
   transition: translate 0.5s ease-in-out;
-  background-color: var(--color-accent, #000);
   translate: -100%;
+  background-color: var(--color-accent, #000);
   position: absolute;
   content: "";
   top: 0;
@@ -250,14 +241,24 @@
   bottom: 0;
 }
 
-/* задержка нажатия у сердца */
-.like-icon .main-body {
-  transition: fill 0.3s;
+/* кнопки */
+.button {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  z-index: 2;
+  border: 2px solid var(--border-color-button, #000);
+  background-color:  #FFF;
+  cursor: pointer;
 }
 
 /* наведение */
 .like-icon:hover .main-body {
   fill: #000;
+}
+
+/* задержка нажатия у сердца */
+.like-icon .main-body {
+  transition: fill 0.3s;
 }
 
 /* анимация  сердца */
