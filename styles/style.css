@@ -256,17 +256,17 @@
 }
 
 /* задержка нажатия у сердца */
-.like-icon {
+.like-icon .main-body {
   transition: fill 0.3s;
 }
 
 /* наведение */
-.like-icon:hover {
+.like-icon:hover .main-body {
   fill: #000;
 }
 
 /* анимация  сердца */
-.like-icon:active {
+.like-icon:active .main-body {
   fill: #ff0000;
 }
 
