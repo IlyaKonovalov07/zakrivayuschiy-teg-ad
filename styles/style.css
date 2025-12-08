@@ -52,15 +52,15 @@
 
 /* текст справа сверху у изображения */
 .card_image-text {
+  position: absolute;
+   text-align: right;
   line-height: 1.25;
-  text-align: right;
   max-width: 320px;
+  z-index: 2;
   font-size: var(--font-size-button);
   font-family: var(--accent-font);
   opacity: 0.5;
-  position: absolute;
   inset: 25px 25px auto auto;
-  z-index: 2;
 }
 
 /*  text-stroke */
@@ -132,8 +132,8 @@
 .card_icon-button {
   transition: 0.3s;
   background: transparent;
-  border: none;
   cursor: pointer;
+  border: none;
 }
 
 /* фокус кнопки */
@@ -165,15 +165,15 @@
 /* Кнопка сохранения */
 .main_save-button {
   display: flex;
+  align-items: center;
   line-height: 0.9;
   font-size: var(--font-size-button, 14px);
+  gap: 8px;
   font-family: var(--accent-font, 'PressStart2P');
   margin-block: 50px 100px;
   margin-inline: auto;
   padding-block: 15px;
   padding-inline: 20px;
-  align-items: center;
-  gap: 8px;
 }
 
 /* дискета */
@@ -231,14 +231,14 @@
 /* эфф навед на кнопку */
 .button::before {
   transition: translate 0.5s ease-in-out;
-  translate: -100%;
-  background-color: var(--color-accent, #000);
-  position: absolute;
-  content: "";
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: var(--color-accent, #000);
+  translate: -100%;
+  content: "";
+  position: absolute;
 }
 
 /* кнопки */
