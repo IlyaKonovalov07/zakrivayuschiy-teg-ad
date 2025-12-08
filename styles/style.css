@@ -121,7 +121,6 @@
   font-size: 18px;
 }
 
-
 /* кнопки у карточек */
 .buttons_card {
   display: flex;
@@ -231,7 +230,7 @@
 /* кнопки */
 .button {
   cursor: pointer;
-  /* transition: box-shadow 0.3s ease; */
+  transition: box-shadow 0.3s ease;
   z-index: 2;
   border: 2px solid var(--border-color-button, #000);
   background-color:  #FFF;
@@ -265,9 +264,3 @@
 .like-icon:active .main-body {
   fill: #ff0000;
 }
-
-/* искры  у сердца */
-/* .like-icon .sparks {
-  fill: #ff0000;
-} */
-
